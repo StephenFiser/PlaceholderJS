@@ -5,29 +5,29 @@ var PlacholderJS = {
 
 	inputsInit: function() {
 			document.getElementById("passwordInput").type = 'text';
-			var username = $('#userIdInput');
-			var password = $('#passwordInput');
+
+			var username = $('#userIdInput'), password = $('#passwordInput'), passText = "password";
 			/* Attach Listeners	*/
-			PlacholderJS.inputFocus(username);
-			PlacholderJS.inputFocus(password);
-			PlacholderJS.inputBlur(username);
-			PlacholderJS.inputBlur(password);
+			PlacholderJS.inputFocus(username, passText);
+			PlacholderJS.inputFocus(password, passText);
+			PlacholderJS.inputBlur(username, passText);
+			PlacholderJS.inputBlur(password, passText);
 	},
-	inputFocus: function(element) {
+	inputFocus: function(element, testText) {
 		$(element).focus(function() {
 			if (this.value == $(this).data("content")) {
 					this.value = '';
-				if ($(this).data("content").indexOf("password") != -1) {
+				if ($(this).data("content").indexOf(testText) != -1) {
 					this.type = 'password';
 				}
 			}
 		});
 	},
-	inputBlur: function(element) {
+	inputBlur: function(element, testText) {
 		$(element).blur(function() {
 		if (this.value == '') {
 				this.value = $(this).data("content");
-				if ($(this).data("content").indexOf("password") != -1) {
+				if ($(this).data("content").indexOf(testText) != -1) {
 					this.type = 'text';
 				}
 			}
