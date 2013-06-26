@@ -3,7 +3,8 @@ $(document).ready(function() {
 	var passtext = "password";
 	document.getElementById("passwordInput").type = 'text';
 
-	// For the following code to work as intended, ensure that the name and value attr of the html input you are working with match
+	// For the following code to work as intended, ensure that the data-content and value attr 
+	//of the html input you are working with match
 
 	function inputFocus(element) {
 		$(element).focus(function() {
