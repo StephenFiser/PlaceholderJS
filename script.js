@@ -4,6 +4,10 @@ var PlacholderJS = {
 	// of the html input you are working with match
 
 	inputsInit: function() {
+			if (!document.getElementById || !jQuery) {
+				return;
+			}
+
 			document.getElementById("passwordInput").type = 'text';
 
 			var username = $('#userIdInput'), password = $('#passwordInput'), passText = "password";
@@ -36,5 +40,7 @@ var PlacholderJS = {
 
 };
 
-window.onload = PlacholderJS.inputsInit;
+$(function() {
+	PlacholderJS.inputsInit();
+});
 	
