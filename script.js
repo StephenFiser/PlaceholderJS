@@ -7,9 +7,9 @@ $(document).ready(function() {
 
 	function inputFocus(element) {
 		$(element).focus(function() {
-			if (this.value == this.name) {
+			if (this.value == $(this).data("content")) {
 					this.value = '';
-				if (this.name.indexOf(passtext) != -1) {
+				if ($(this).data("content").indexOf(passtext) != -1) {
 					this.type = 'password';
 				}
 			}
@@ -19,8 +19,8 @@ $(document).ready(function() {
 	function inputBlur(element) {
 		$(element).blur(function() {
 		if (this.value == '') {
-				this.value = this.name;
-				if (this.name.indexOf(passtext) != -1) {
+				this.value = $(this).data("content");
+				if ($(this).data("content").indexOf(passtext) != -1) {
 					this.type = 'text';
 				}
 			}
