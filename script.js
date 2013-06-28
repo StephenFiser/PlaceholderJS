@@ -5,7 +5,7 @@ var PlacholderJS = {
 
 	inputsInit: function() {
 			$('.noJS').hide();
-			if (!document.getElementById || !jQuery) {
+			if (!jQuery) {
 				$('.noJS').show();
 				return;
 			}
