@@ -4,13 +4,16 @@ var PlacholderJS = {
 	// of the html input you are working with match
 
 	inputsInit: function() {
+			$('.noJS').hide();
 			if (!document.getElementById || !jQuery) {
+				$('.noJS').show();
 				return;
 			}
 
 			document.getElementById("passwordInput").type = 'text';
 
 			var username = $('#userIdInput'), password = $('#passwordInput'), passText = "password";
+			username.blur();
 			/* Attach Listeners	*/
 			PlacholderJS.inputFocus(username, passText);
 			PlacholderJS.inputFocus(password, passText);
