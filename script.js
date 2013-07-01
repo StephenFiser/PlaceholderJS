@@ -1,7 +1,7 @@
 var PlacholderJS = {
 
-	// For the following code to work as intended, ensure that the data-content and value attr 
-	// of the html input you are working with match
+	/* For the following code to work as intended, ensure that the data-content and value attr 
+	of the html input you are working with match */
 
 	inputsInit: function() {
 			$('.noJS').hide();
@@ -13,8 +13,8 @@ var PlacholderJS = {
 			document.getElementById("passwordInput").type = 'text';
 
 			var username = $('#userIdInput'), password = $('#passwordInput'), passText = "password";
-			username.blur();
-			/* Attach Listeners	*/
+			username.blur(); // need this since different browsers focus on first element differently
+			// Attach Listeners	
 			PlacholderJS.inputFocus(username, passText);
 			PlacholderJS.inputFocus(password, passText);
 			PlacholderJS.inputBlur(username, passText);
